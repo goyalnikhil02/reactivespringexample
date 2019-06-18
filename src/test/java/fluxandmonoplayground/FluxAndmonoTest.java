@@ -3,8 +3,8 @@ package fluxandmonoplayground;
 import org.junit.Test;
 
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
-import reactor.test.StepVerifier.Step;
 
 public class FluxAndmonoTest {
 
@@ -57,4 +57,21 @@ public class FluxAndmonoTest {
 
 	}
 
+	
+	@Test
+	public void MonoTest() {
+		Mono<String> monoString= Mono.just("Nikhil >> MONO").log();
+		
+		
+		StepVerifier.create(monoString).expectNext("Nikhil >> MONO").verifyComplete();
+
+	}
+	
+	@Test
+	public void MonoTest_Error() {
+		Mono monoString= Mono.error(new RuntimeException("Exception occurs")).log();
+		
+		StepVerifier.create(monoString).expectError(RuntimeException.class).verify();
+
+	}
 }
