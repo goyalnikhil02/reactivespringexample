@@ -16,4 +16,7 @@ spring:
 ---
 spring:
  profiles: prod
-   
+---
+spring:
+ profiles: test
+      
