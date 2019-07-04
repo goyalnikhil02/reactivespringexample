@@ -35,7 +35,13 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-devtools")
 	implementation('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
 	implementation('org.springframework.boot:spring-boot-starter-webflux')
+	implementation("org.springframework.boot:spring-boot-starter-cache")
+	implementation("com.hazelcast:hazelcast")
+	implementation("com.hazelcast:hazelcast-spring")
+	
 	compileOnly('org.projectlombok:lombok')
+	// https://mvnrepository.com/artifact/com.hazelcast/hazelcast
+	
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	//testImplementation('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
 	testImplementation('io.projectreactor:reactor-test')
